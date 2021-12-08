@@ -49,7 +49,6 @@ body {
     display: block;
     width: 100%;
     height: 1046px;
-    border-bottom: 1px solid #767674;
 }
 
 .left {
@@ -60,19 +59,40 @@ body {
     float: right;
 }
 
+.swiper-container {
+    width:  100%;
+    height: 100%;
+}
 /* header */
+
+.gotop {
+    position: fixed;
+    left: calc(50% + 69rem);
+    transform: translateX(-50%);
+    bottom: 10rem;
+    width: 5rem;
+    height: 5rem;
+    border: 0;
+    background-color: #000;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 5rem;
+    z-index: 99;
+    cursor: pointer;
+}
 
 .header {
     position: relative;
     display: block;
-    background-image: url('../images/header.png') no-repeat center;
 }
 
 .gnb {
-    position: absolute;
+    position: fixed;
     top: 50px;
     right: 70px;
     display: block;
+    z-index: 999;
 }
 
 .gnb > li {
@@ -85,18 +105,28 @@ body {
 .gnb > li > a {
     position: relative;
     display: block;
-    font-size: 40px;
+    font-size: 18px;
     font-weight: 200;
     line-height: 1;
     letter-spacing: 0.5px;
     cursor: pointer;
-    color: #fff;
+    color: #767674;
+    /*border: 1px solid rgba(0, 0, 0, 0.0);*/
 }
 
 .gnb > li > a:hover {
     color: #c59966;
-    border: 1px solid #aaa7a6;
+    /*border: 1px solid #aaa7a6;*/
     background-color: #2f2d2a;
+}
+
+/* visual */
+
+.visual {
+    position: relative;
+    display: block;
+    background: url('../images/header.png') no-repeat center;
+    background-size: cover;
 }
 
 /* about */
@@ -105,11 +135,15 @@ body {
     position: relative;
     display: block;
 }
-
+.about-left {
+    position: relative;
+    display: block;
+    padding-top: 170px;
+    padding-left: 180px;
+    width:  50%;
+}
 .about_t {
-    position: absolute;
-    top: 170px;
-    left: 180px;
+    position: relative;
     display: block;
     font-size: 50px;
     font-weight: 400;
@@ -122,72 +156,130 @@ body {
 .about_l {
     position: relative;
     display: block;
-    margin-top: 460px;
-    margin-left: 180px;
-    font-size: 30px;
-    font-weight: 300;
+    margin-top: 300px;
+    font-size: 40px;
+    font-weight: 400;
     line-height: 1.6;
     letter-spacing: 0.5px;
     color: #1a1918;
 }
+.about_l_txt {
+    position: relative;
+    display: block;
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: 300;
+}
 
-.about_l > p {
-    font-size: 40;
-    font-weight: 400;
+.about-right {
+    position: relative;
+    display: block;
+    width:  50%;
+
+    padding-top: 170px;
 }
 
 .about_r {
     position: relative;
     display: block;
-    margin-top: 300px;
-    margin-right: 200px;
     font-size: 40px;
     font-weight: 300;
     line-height: 1.6;
 }
 
+
 .skill {
-    position: absolute;
-    top: 600px;
-    left: 935px;
+    position: relative;
     display: block;
     font-size: 50px;
     font-weight: 400;
     line-height: 1;
     letter-spacing: 0.5px;
     color: #1a1918;
+    padding: 110px 0;
 }
 
 .skill_list {
     position: relative;
     display: block;
-    padding-top: 750px;
-    padding-left: 1100px;
     font-size: 20px;
 }
 
 .skill_list > li {
     position: relative;
     display: block;
+    float: left;
+    margin-right: 30px;
 }
 
 .skill_cate {
     display: block;
-    float: left;
-    margin: 0 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skill_circle {
+    position: relative;
+    display: block;
+    width:  100px;
+    height: 100px;
+}
+
+.skill_icon {
+    position: absolute;
+    left:  50%;
+    top:  50%;
+    transform: translate(-50%, -50%);
+    width:  40px;
+    height: 40px;
+    background: red;
+}
+.html_icon {
+    background: url('../images/html.png') no-repeat center;
+    background-size: cover; 
+}
+.css_icon {
+    background: url('../images/css.png') no-repeat center;
+    background-size: cover; 
+}
+.jq_icon {
+    background: url('../images/jq.png') no-repeat center;
+    background-size: cover; 
+}
+.js_icon {
+    background: url('../images/js.png') no-repeat center;
+    background-size: cover; 
 }
 
 .skill_list2 {
     position: relative;
     display: block;
-    padding-top: 100px;
-    padding-left: 1100px;
-    font-size: 20px;
+    font-size: 20px;    
+    margin-top: 30px;
 }
 
 .skill_list2 > li {
     position: relative;
     display: block;
+    float: left;
+    margin-right: 30px;
+}
+
+.ph_icon {
+    background: url('../images/ps.png') no-repeat center;
+    background-size: cover; 
+}
+.il_icon {
+    background: url('../images/ai.png') no-repeat center;
+    background-size: cover; 
+}
+.xd_icon {
+    background: url('../images/xd.png') no-repeat center;
+    background-size: cover; 
+}
+.oa_icon {
+    background: url('../images/oa.png') no-repeat center;
+    background-size: cover; 
 }
 
 /* pub */
@@ -204,12 +296,11 @@ body {
 }
 
 .pub_t {
-    position: absolute;
-    top: 68px;
-    left: 0;
-    display: inline-block;
+    position: relative;
+    padding-top: 68px;
+    padding-bottom: 180px;
+    display: block;
     width: 100%;
-    margin-top: 20;
     font-size: 50px;
     font-weight: 400;
     line-height: 1;
@@ -219,6 +310,7 @@ body {
     text-transform: uppercase;
 }
 
+
 .publ-slide {
     position: relative;
     display: block;
@@ -227,8 +319,7 @@ body {
 
 .publ-box {
     display: block;
-    width: 25%;
-    float:left;
+    width: 100%;
     text-align: center;
 
 }
@@ -237,7 +328,7 @@ body {
 
 .publ-desc {    
     font-size: 4rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 100%;
     height: 50px;
     color: #767674;    
@@ -246,6 +337,10 @@ body {
 .publ-tech {
     font-size: 5rem;
     margin: 2rem;
+}
+
+.publ-tech > i{
+    color: #767674;
 }
 
 .publ-link {}
@@ -291,8 +386,7 @@ body {
 
 .life-box {
     display: block;
-    width: 33.3%;
-    float:left;
+    width: 100%;
     text-align: center;
 
 }
@@ -311,6 +405,6 @@ body {
     font-size: 2.5rem;
     margin-top: 3rem;
     width: 100%;
-    height: 50px;
+    height: 100%px;
     color: #767674;    
 }

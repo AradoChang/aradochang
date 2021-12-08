@@ -13,16 +13,19 @@
     <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <!-- <script type="text/javascript" src="js/prefixfree.min.js"></script> -->
     <link href="js/aos/aos.css" rel="stylesheet">
     <script src="js/aos/aos.js"></script>
+    <link rel="stylesheet" href="js/swiper/swiper.min.css">
+    <script src="js/swiper/swiper.min.js"></script>
+    <script type="text/javascript" src="js/progressbar/progressbar.js"></script>
+    <script type="text/javascript" src="js/counterup/waypoints.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
     <link rel="stylesheet" href="js/lightbox2/css/lightbox.css">
     <script src="js/lightbox2/js/lightbox.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/fontello/css/animation.css">
-    <link rel="stylesheet" href="css/fontello/css/fontello.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="js/script.js"></script>
 </head>
@@ -30,159 +33,216 @@
 <body>
     <div class="wrap">
         <header class="header">
-            <div class="con">
-                <img src="images/header.png">
+            <button class="gotop">
+                <i class="fas fa-arrow-up"></i>
+            </button>
                 <ul class="gnb clearfix">
-                    <li><a>HOME</a></li>
-                    <li><a>ABOUT</a></li>
-                    <li><a>PUBLISING</a></li>
-                    <li><a>LIFE</a></li>
+                    <li><i class="icon-link-ext-alt"></i><a href="#home" class="move">HOME</a></li>
+                    <li><i class="icon-link-ext-alt"></i><a href="#about" class="move">ABOUT</a></li>
+                    <li><i class="icon-link-ext-alt"></i><a href="#pub" class="move">PUBLISING</a></li>
+                    <li><i class="icon-link-ext-alt"></i><a href="#life" class="move">LIFE</a></li>
                 </ul>
-            </div>
         </header>
-        <section class="about">
+        <section class="visual" id="home">
+            <div class="con"></div>
+        </section>
+        <section class="about" id="about">
             <div class="con clearfix">
-                <div class="about_t">about me?</div>
-                <div class="about_l left">
-                    <p>Education</p><br>2021.07 - 2021.12<br><br> 그린컴퓨터아트학원 <br> 반응형 웹디자인&웹퍼블리셔 양성과정 수료
+                <div class="about-left left">
+                    <p class="about_t">about me?</p>                      
+                    <p class="about_l" data-aos="fade-right" data-aos-delay="300"
+                    data-aos-duration="1000" data-aos-easing="linear">Education</p>
+                    <p class="about_l_txt" data-aos="fade-right" data-aos-delay="300"
+                    data-aos-duration="1000" data-aos-easing="linear">
+                        2021.07 - 2021.12<br><br> 그린컴퓨터아트학원 <br> 반응형 웹디자인&웹퍼블리셔 양성과정 수료
+                    </p>
                 </div>
-                <div class="about_r right">나쁜습관이 있다면 고치고, <br> 동료들의 의견을 적극적으로 수용해 나가며, <br> 언제나 겸손한 자세로 배우겠습니다.</div>
-                <h3 class="skill">Skills</h3>
-                <ul class="skill_list">
-                    <li>
-                        <span class="skill_cate">HTML</span>
-                    </li>
-                    <li>
-                        <span class="skill_cate">CSS</span>
-                    </li>
-                    <li>
-                        <span class="skill_cate">jQuery</span>
-                    </li>
-                    <li>
-                        <span class="skill_cate">javascript</span>
-                    </li>
-                </ul>
-                <ul class="skill_list2">
-                    <li>
-                        <span class="skill_cate">Photoshop</span>
-                    </li>
-                    <li>
-                        <span class="skill_cate">Illustrator</span>
-                    </li>
-                    <li>
-                        <span class="skill_cate">AdobeXd</span>
-                    </li>
-                    <li>
-                        <span class="skill_cate">OA</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="pub">
-            <div class="con">
-                <div class="publ-slide clearfix">
-                    <div class="pub_t">Publishing</div>
-                    <div class="publ-box">
-                        <img src="images/pub_1.png" alt="STX건설">
-                        <p class="publ-desc">
-                            STX건설
-                        </p>
-                        <p class="publ-tech">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-github"></i>
-                        </p>
-                        <p class="publ-link">
-                            <a href="https://aradochang.github.io/stxconst/" target="_blank">work</a>
-                            <a href="https://github.com/AradoChang/stxconst" target="_blank">GitHub</a>
-                            <a href="http://stxconst.co.kr" target="_blank">origin</a>
-                        </p>
-                    </div>
-                    <div class="publ-box">
-                        <img src="images/pub_2.png" alt="풀무원 녹즙">
-                        <p class="publ-desc">
-                            풀무원 녹즙
-                        </p>
-                        <p class="publ-tech">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-github"></i>
-                        </p>
-                        <p class="publ-link">
-                            <a href="https://aradochang.github.io/greenjuice/" target="_blank">work</a>
-                            <a href="https://github.com/AradoChang/greenjuice" target="_blank">GitHub</a>
-                            <a href="http://greenjuice.pulmuone.com" target="_blank">origin</a>
-                        </p>
-                    </div>
-                    <div class="publ-box">
-                        <img src="images/pub_3.png" alt="한살림 장보기">
-                        <p class="publ-desc">
-                            한살림 장보기
-                        </p>
-                        <p class="publ-tech">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-github"></i>
-                        </p>
-                        <p class="publ-link">
-                            <a href="https://aradochang.github.io/hansalim/" target="_blank">work</a>
-                            <a href="https://github.com/AradoChang/hansalim" target="_blank">GitHub</a>
-                            <a href="http://shop.hansalim.or.kr/shopping.spmain.do" target="_blank">origin</a>
-                        </p>
-                    </div>
-                    <div class="publ-box">
-                        <img src="images/pub_4.png" alt="넥서스 플래그십">
-                        <p class="publ-desc">
-                            넥서스 플래그십
-                        </p>
-                        <p class="publ-tech">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-github"></i>
-                        </p>
-                        <p class="publ-link">
-                            <a href="https://aradochang.github.io/nexus/" target="_blank">work</a>
-                            <a href="https://github.com/AradoChang/nexus" target="_blank">GitHub</a>
-                            <a href="https://nexus-official.com/" target="_blank">origin</a>
-                        </p>
-                    </div>
+                <div class="about-right left">
+                    <div class="about_r" data-aos="fade-left" data-aos-delay="300"
+                    data-aos-duration="1000" data-aos-easing="linear">나쁜습관이 있다면 고치고, <br> 동료들의 의견을 적극적으로 수용해 나가며, <br> 언제나 겸손한 자세로 배우겠습니다.</div>
+                    <h3 class="skill" data-aos="fade-left" data-aos-delay="300"
+                    data-aos-duration="1000" data-aos-easing="linear">Skills</h3>
+                    <ul class="skill_list clearfix" data-aos="fade-left" data-aos-delay="300"
+                    data-aos-duration="1000" data-aos-easing="linear">
+                        <li>
+                            <span class="skill_cate">HTML</span>
+                            <div class="skill_circle" id="html">
+                                <span class="skill_icon html_icon"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill_cate">CSS</span>
+                            <div class="skill_circle" id="css">
+                                <span class="skill_icon css_icon"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill_cate">jQuery</span>
+                            <div class="skill_circle" id="jq">
+                                <span class="skill_icon jq_icon"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill_cate">javascript</span>
+                            <div class="skill_circle" id="js">
+                                <span class="skill_icon js_icon"></span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="skill_list2 clearfix" data-aos="fade-left" data-aos-delay="300"
+                    data-aos-duration="1000" data-aos-easing="linear">
+                        <li>
+                            <span class="skill_cate">Photoshop</span>
+                            <div class="skill_circle" id="ph">
+                                <span class="skill_icon ph_icon"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill_cate">Illustrator</span>
+                            <div class="skill_circle" id="il">
+                                <span class="skill_icon il_icon"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill_cate">AdobeXd</span>
+                            <div class="skill_circle" id="xd">
+                                <span class="skill_icon xd_icon"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="skill_cate">OA</span>
+                            <div class="skill_circle" id="oa">
+                                <span class="skill_icon oa_icon"></span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
-        <section class="life">
+        <section class="pub" id="pub">
             <div class="con">
-                <div class="life-slide clearfix">
+                <div class="pub_t">Publishing</div>
+                <div class="swiper-container sw-pub">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="publ-box">
+                                <img src="images/pub_1.png" alt="STX건설">
+                                <p class="publ-desc">STX건설</p>
+                                <p class="publ-tech">
+                                    <i class="fab fa-html5"></i>
+                                    <i class="fab fa-js"></i>
+                                    <i class="fab fa-css3-alt"></i>
+                                    <i class="fab fa-github"></i>
+                                </p>
+                                <p class="publ-link">
+                                    <a href="https://aradochang.github.io/stxconst/" target="_blank">work</a>
+                                    <a href="https://github.com/AradoChang/stxconst" target="_blank">GitHub</a>
+                                    <a href="http://stxconst.co.kr" target="_blank">origin</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="publ-box">
+                                <img src="images/pub_2.png" alt="풀무원 녹즙">
+                                <p class="publ-desc">
+                                    풀무원 녹즙
+                                </p>
+                                <p class="publ-tech">
+                                    <i class="fab fa-html5"></i>
+                                    <i class="fab fa-js"></i>
+                                    <i class="fab fa-css3-alt"></i>
+                                    <i class="fab fa-github"></i>
+                                </p>
+                                <p class="publ-link">
+                                    <a href="https://aradochang.github.io/greenjuice/" target="_blank">work</a>
+                                    <a href="https://github.com/AradoChang/greenjuice" target="_blank">GitHub</a>
+                                    <a href="http://greenjuice.pulmuone.com" target="_blank">origin</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="publ-box">
+                                <img src="images/pub_3.png" alt="한살림 장보기">
+                                <p class="publ-desc">
+                                    한살림 장보기
+                                </p>
+                                <p class="publ-tech">
+                                    <i class="fab fa-html5"></i>
+                                    <i class="fab fa-js"></i>
+                                    <i class="fab fa-css3-alt"></i>
+                                    <i class="fab fa-github"></i>
+                                </p>
+                                <p class="publ-link">
+                                    <a href="https://aradochang.github.io/hansalim/" target="_blank">work</a>
+                                    <a href="https://github.com/AradoChang/hansalim" target="_blank">GitHub</a>
+                                    <a href="http://shop.hansalim.or.kr/shopping.spmain.do" target="_blank">origin</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="publ-box">
+                                <img src="images/pub_4.png" alt="넥서스 플래그십">
+                                <p class="publ-desc">
+                                    넥서스 플래그십
+                                </p>
+                                <p class="publ-tech">
+                                    <i class="fab fa-html5"></i>
+                                    <i class="fab fa-js"></i>
+                                    <i class="fab fa-css3-alt"></i>
+                                    <i class="fab fa-github"></i>
+                                </p>
+                                <p class="publ-link">
+                                    <a href="https://aradochang.github.io/nexus/" target="_blank">work</a>
+                                    <a href="https://github.com/AradoChang/nexus" target="_blank">GitHub</a>
+                                    <a href="https://nexus-official.com/" target="_blank">origin</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="life" id="life">
+            <div class="con">
+                <div class="life-slide">
                     <div class="life_t">Life</div>
-                    <div class="life-box">
-                        <img src="images/life_1.png">
-                        <p class="life-desc">
-                            Trip
-                        </p>
-                        <p class="life-txt">
-                            여행을 다니면서<br>여러가지 견문을 넓히는걸<br>좋아합니다.
-                        </p>
-                    </div>
-                    <div class="life-box">
-                        <img src="images/life_2.png">
-                        <p class="life-desc">
-                            OTT
-                        </p>
-                        <p class="life-txt">
-                            여행을 가는날이 아니라면,<br>여러가지 OTT로 영상물을 보면서<br>쉬는걸 좋아합니다.
-                        </p>
-                    </div>
-                    <div class="life-box">
-                        <img src="images/life_3.png">
-                        <p class="life-desc">
-                            Music
-                        </p>
-                        <p class="life-txt">
-                            평소에 여러가지 장르의<br>음악을 듣는것을 좋아해서<br>산책하면서도 자주 헤드폰을 끼고<br>노래를 듣습니다.
-                        </p>
+                    <div class="swiper-container sw-skill">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="life-box">
+                                    <img src="images/life_1.png">
+                                    <p class="life-desc">
+                                        Trip
+                                    </p>
+                                    <p class="life-txt">
+                                        여행을 다니면서<br>여러가지 견문을 넓히는걸<br>좋아합니다.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="life-box">
+                                    <img src="images/life_2.png">
+                                    <p class="life-desc">
+                                        OTT
+                                    </p>
+                                    <p class="life-txt">
+                                        여행을 가는날이 아니라면,<br>여러가지 OTT로 영상물을 보면서<br>쉬는걸 좋아합니다.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="life-box">
+                                    <img src="images/life_3.png">
+                                    <p class="life-desc">
+                                        Music
+                                    </p>
+                                    <p class="life-txt">
+                                        평소에 여러가지 장르의<br>음악을 듣는것을 좋아해서<br>산책하면서도 자주 헤드폰을 끼고<br>노래를 듣습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

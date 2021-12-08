@@ -7,50 +7,16 @@ $(document).ready(function () {
         });
     });
 
-    // 리디자인 슬라이드
-    new Swiper('.sw-rede', {
-        slidesPerView: 4,
-        loop: true,
-    });
-    // 퍼블리싱 슬라이드
-    new Swiper('.sw-publ', {
-        slidesPerView: 4,
-        loop: true,
-        spaceBetween: 20,
-    });
 
-    // 말줄임 적용 (...)
-    $(".publ-desc").dotdotdot({
-        wrapper: 'div',
-        /*  콘텐트를 감쌀 요소. */
-        ellipsis: '... ',
-        /*  말줄임표를 뭘로 할지 */
-        wrap: 'word',
-        /*  자를 단위. 다음 옵션 중 하나 선택: 'word'/'letter'/'children' */
-        after: null,
-        /*  자르고 나서도 유지시킬 요소를 jQuery 선택자로 적는다. */
-        watch: false,
-        /*  윈도우가 리사이즈될 때 업데이트할 건지: true/'window' */
-        height: null,
-        /*  선택. max-height를 지정한다. 만약 null이면 알아서 잰다. */
-        tolerance: 0 /*  글이 넘치면 이만큼쯤 height를 늘린다 */
+    var swiper = new Swiper(".sw-pub", {
+        slidesPerView: 4,
+        spaceBetween: 30,
     });
-
-    $(".rede-box-desc p").dotdotdot({
-        wrapper: 'div',
-        /*  콘텐트를 감쌀 요소. */
-        ellipsis: '... ',
-        /*  말줄임표를 뭘로 할지 */
-        wrap: 'word',
-        /*  자를 단위. 다음 옵션 중 하나 선택: 'word'/'letter'/'children' */
-        after: null,
-        /*  자르고 나서도 유지시킬 요소를 jQuery 선택자로 적는다. */
-        watch: false,
-        /*  윈도우가 리사이즈될 때 업데이트할 건지: true/'window' */
-        height: null,
-        /*  선택. max-height를 지정한다. 만약 null이면 알아서 잰다. */
-        tolerance: 0 /*  글이 넘치면 이만큼쯤 height를 늘린다 */
+    var swiper = new Swiper(".sw-skill", {
+        slidesPerView: 3,
+        spaceBetween: 30,
     });
+    
 
     // 부드럽게 위치 이동하는 코드
     var moveEl = $('.move');
@@ -78,262 +44,119 @@ $(document).ready(function () {
         });
     });
 
-    // photoshop_성취율
-    var photoshop = new ProgressBar.Line(skill_photoshop, {
-        strokeWidth: 4,
+
+    var bar_html = new ProgressBar.Circle(html, {
+        strokeWidth: 6,
         easing: 'easeInOut',
         duration: 1400,
-        color: '#ff0000',
+        color: '#767674',
         trailColor: '#eee',
         trailWidth: 1,
-        svgStyle: {
-            width: '100%',
-            height: '100%'
-        },
-        from: {
-            color: '#ff0000'
-        },
-        to: {
-            color: '#ff0000'
-        },
-        step: (state, bar) => {
-            bar.path.setAttribute('stroke', state.color);
-        }
+        svgStyle: null
     });
 
-
-    // illust 성취율
-    var illust = new ProgressBar.Line(skill_illust, {
-        strokeWidth: 4,
+    var bar_css = new ProgressBar.Circle(css, {
+        strokeWidth: 6,
         easing: 'easeInOut',
         duration: 1400,
-        color: '#00ff00',
+        color: '#767674',
         trailColor: '#eee',
         trailWidth: 1,
-        svgStyle: {
-            width: '100%',
-            height: '100%'
-        },
-        from: {
-            color: '#00ff00'
-        },
-        to: {
-            color: '#00ff00'
-        },
-        step: (state, bar) => {
-            bar.path.setAttribute('stroke', state.color);
-        }
+        svgStyle: null
     });
 
-    var xd = new ProgressBar.Line(skill_xd, {
-        strokeWidth: 4,
+    var bar_jq = new ProgressBar.Circle(jq, {
+        strokeWidth: 6,
         easing: 'easeInOut',
         duration: 1400,
-        color: '#0000ff',
+        color: '#767674',
         trailColor: '#eee',
         trailWidth: 1,
-        svgStyle: {
-            width: '100%',
-            height: '100%'
-        },
-        from: {
-            color: '#0000ff'
-        },
-        to: {
-            color: '#0000ff'
-        },
-        step: (state, bar) => {
-            bar.path.setAttribute('stroke', state.color);
-        }
+        svgStyle: null
     });
 
-    var html = new ProgressBar.Circle(skill_html, {
-        color: '#aaa',
-        strokeWidth: 4,
-        trailWidth: 1,
+    var bar_js = new ProgressBar.Circle(js, {
+        strokeWidth: 6,
         easing: 'easeInOut',
         duration: 1400,
-        text: {
-            autoStyleContainer: false
-        },
-        from: {
-            color: '#aaa',
-            width: 1
-        },
-        to: {
-            color: '#333',
-            width: 4
-        },
-        step: function (state, circle) {
-            circle.path.setAttribute('stroke', state.color);
-            circle.path.setAttribute('stroke-width', state.width);
-
-            var value = Math.round(circle.value() * 100);
-            if (value === 0) {
-                circle.setText('');
-            } else {
-                circle.setText(value);
-            }
-
-        }
+        color: '#767674',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: null
     });
 
-    html.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-    html.text.style.fontSize = '2rem';
-
-    var css = new ProgressBar.Circle(skill_css, {
-        color: '#aaa',
-        strokeWidth: 4,
-        trailWidth: 1,
+    var bar_ph = new ProgressBar.Circle(ph, {
+        strokeWidth: 6,
         easing: 'easeInOut',
         duration: 1400,
-        text: {
-            autoStyleContainer: false
-        },
-        from: {
-            color: '#aaa',
-            width: 1
-        },
-        to: {
-            color: '#333',
-            width: 4
-        },
-        step: function (state, circle) {
-            circle.path.setAttribute('stroke', state.color);
-            circle.path.setAttribute('stroke-width', state.width);
-
-            var value = Math.round(circle.value() * 100);
-            if (value === 0) {
-                circle.setText('');
-            } else {
-                circle.setText(value);
-            }
-
-        }
-    });
-
-    css.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-    css.text.style.fontSize = '2rem';
-
-    var jquery = new ProgressBar.Circle(skill_jquery, {
-        color: '#aaa',
-        strokeWidth: 4,
+        color: '#767674',
+        trailColor: '#eee',
         trailWidth: 1,
+        svgStyle: null
+    });
+    
+    var bar_il = new ProgressBar.Circle(il, {
+        strokeWidth: 6,
         easing: 'easeInOut',
         duration: 1400,
-        text: {
-            autoStyleContainer: false
-        },
-        from: {
-            color: '#aaa',
-            width: 1
-        },
-        to: {
-            color: '#333',
-            width: 4
-        },
-        step: function (state, circle) {
-            circle.path.setAttribute('stroke', state.color);
-            circle.path.setAttribute('stroke-width', state.width);
-
-            var value = Math.round(circle.value() * 100);
-            if (value === 0) {
-                circle.setText('');
-            } else {
-                circle.setText(value);
-            }
-
-        }
-    });
-
-    jquery.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-    jquery.text.style.fontSize = '2rem';
-
-    var oa = new ProgressBar.Circle(skill_oa, {
-        color: '#aaa',
-        strokeWidth: 4,
+        color: '#767674',
+        trailColor: '#eee',
         trailWidth: 1,
+        svgStyle: null
+    });
+    
+    var bar_xd = new ProgressBar.Circle(xd, {
+        strokeWidth: 6,
         easing: 'easeInOut',
         duration: 1400,
-        text: {
-            autoStyleContainer: false
-        },
-        from: {
-            color: '#aaa',
-            width: 1
-        },
-        to: {
-            color: '#333',
-            width: 4
-        },
-        step: function (state, circle) {
-            circle.path.setAttribute('stroke', state.color);
-            circle.path.setAttribute('stroke-width', state.width);
-
-            var value = Math.round(circle.value() * 100);
-            if (value === 0) {
-                circle.setText('');
-            } else {
-                circle.setText(value);
-            }
-
-        }
+        color: '#767674',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: null
+    });
+    
+    var bar_oa = new ProgressBar.Circle(oa, {
+        strokeWidth: 6,
+        easing: 'easeInOut',
+        duration: 1400,
+        color: '#767674',
+        trailColor: '#eee',
+        trailWidth: 1,
+        svgStyle: null
     });
 
-    oa.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-    oa.text.style.fontSize = '2rem';
+    
 
-    // oa.animate(0.88);
-    // jquery.animate(0.75);
-    // css.animate(0.90);
-    // html.animate(1.0);
-    // photoshop.animate(0.8);
-    // illust.animate(0.95);
-    // xd.animate(0.83);
-
-    // 스크롤을 했을 때 모션 시작
-    var sc_y = $(window).scrollTop();
+    // 스크롤바의 위치를 체크한다.
     $(window).scroll(function(){
+        // 스크롤바의 위치 값
+        var scY = $(window).scrollTop();
 
-        sc_y = $(window).scrollTop();
-        
-        if( sc_y >= 900 ) {
-
-            oa.animate(0.88);
-            jquery.animate(0.75);
-            css.animate(0.90);
-            html.animate(1.0);
-            photoshop.animate(0.8);
-            illust.animate(0.95);
-            xd.animate(0.83);
-
+        if(scY > 800) {
+            // 애니메이션 실행
+            bar_html.animate(0.9);  // Number from 0.0 to 1.0
+            bar_css.animate(0.9);  // Number from 0.0 to 1.0
+            bar_jq.animate(0.6);  // Number from 0.0 to 1.0
+            bar_js.animate(0.7);  // Number from 0.0 to 1.0
+            bar_ph.animate(0.9);  // Number from 0.0 to 1.0
+            bar_il.animate(0.9);  // Number from 0.0 to 1.0
+            bar_xd.animate(0.6);  // Number from 0.0 to 1.0
+            bar_oa.animate(0.8);  // Number from 0.0 to 1.0
+        }else {
+            // 원래모습으로 돌리기
+            bar_html.set(0.0);
+            bar_css.set(0.0);
+            bar_jq.set(0.0);
+            bar_js.set(0.0);
+            bar_ph.set(0.0);
+            bar_il.set(0.0);
+            bar_xd.set(0.0);
+            bar_oa.set(0.0);
         }
 
-    });
+    });    
 
-    $('.count').counterUp({
-        delay: 10,
-        time: 1000
-    });
 
-    // 스크롤시 애니메이션 
-    $('.life-img').waypoint(function(dir) {
-        if(dir=="down") {
-            $('.life-img').addClass('life-img-active');
-        }else{
-            $('.life-img').removeClass('life-img-active');
-        }
-    }, 
-    { 
-        offset: '100%' 
-    });
-
-    $(".etc-sample").niceScroll({
-        cursorwidth: "20px",
-        cursoropacitymax: 0.5,
-        boxzoom: true,
-        background: "#000"
-    });
 
 });
 
